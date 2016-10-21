@@ -12,6 +12,8 @@
 		55C88C5D1DA2B7E500FB4747 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55C88C5B1DA2B7E500FB4747 /* MainMenu.xib */; };
 		55C88C681DA2B7E500FB4747 /* netControlTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C88C671DA2B7E500FB4747 /* netControlTests.swift */; };
 		55C88C731DA2B7E500FB4747 /* netControlUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C88C721DA2B7E500FB4747 /* netControlUITests.swift */; };
+		55C88C821DA2BC3B00FB4747 /* NetworkStatistics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55C88C811DA2BC3B00FB4747 /* NetworkStatistics.framework */; };
+		55C88C881DA2C35900FB4747 /* netstats.m in Sources */ = {isa = PBXBuildFile; fileRef = 55C88C871DA2C35900FB4747 /* netstats.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +45,10 @@
 		55C88C6E1DA2B7E500FB4747 /* netControlUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = netControlUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		55C88C721DA2B7E500FB4747 /* netControlUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = netControlUITests.swift; sourceTree = "<group>"; };
 		55C88C741DA2B7E500FB4747 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		55C88C811DA2BC3B00FB4747 /* NetworkStatistics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkStatistics.framework; path = ../../../../System/Library/PrivateFrameworks/NetworkStatistics.framework; sourceTree = "<group>"; };
+		55C88C831DA2C20C00FB4747 /* netControl-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "netControl-Bridging-Header.h"; sourceTree = "<group>"; };
+		55C88C861DA2C35800FB4747 /* netstats.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = netstats.h; sourceTree = "<group>"; };
+		55C88C871DA2C35900FB4747 /* netstats.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = netstats.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55C88C821DA2BC3B00FB4747 /* NetworkStatistics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,6 +84,7 @@
 				55C88C661DA2B7E500FB4747 /* netControlTests */,
 				55C88C711DA2B7E500FB4747 /* netControlUITests */,
 				55C88C551DA2B7E500FB4747 /* Products */,
+				55C88C801DA2BC3A00FB4747 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,6 +105,9 @@
 				55C88C591DA2B7E500FB4747 /* Assets.xcassets */,
 				55C88C5B1DA2B7E500FB4747 /* MainMenu.xib */,
 				55C88C5E1DA2B7E500FB4747 /* Info.plist */,
+				55C88C861DA2C35800FB4747 /* netstats.h */,
+				55C88C871DA2C35900FB4747 /* netstats.m */,
+				55C88C831DA2C20C00FB4747 /* netControl-Bridging-Header.h */,
 			);
 			path = netControl;
 			sourceTree = "<group>";
@@ -117,6 +128,14 @@
 				55C88C741DA2B7E500FB4747 /* Info.plist */,
 			);
 			path = netControlUITests;
+			sourceTree = "<group>";
+		};
+		55C88C801DA2BC3A00FB4747 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				55C88C811DA2BC3B00FB4747 /* NetworkStatistics.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -187,6 +206,7 @@
 				TargetAttributes = {
 					55C88C531DA2B7E500FB4747 = {
 						CreatedOnToolsVersion = 8.0;
+						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
 					};
 					55C88C621DA2B7E500FB4747 = {
@@ -252,6 +272,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55C88C881DA2C35900FB4747 /* netstats.m in Sources */,
 				55C88C581DA2B7E500FB4747 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -344,6 +365,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OBJC_BRIDGING_HEADER = "netControl/netControl-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -385,6 +407,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
+				SWIFT_OBJC_BRIDGING_HEADER = "netControl/netControl-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 			};
 			name = Release;
@@ -393,11 +416,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks",
+				);
 				INFOPLIST_FILE = netControl/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.caffeina.netControl;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "netControl/netControl-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -406,11 +436,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks",
+				);
 				INFOPLIST_FILE = netControl/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.caffeina.netControl;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "netControl/netControl-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -492,6 +528,7 @@
 				55C88C791DA2B7E500FB4747 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		55C88C7A1DA2B7E500FB4747 /* Build configuration list for PBXNativeTarget "netControlTests" */ = {
 			isa = XCConfigurationList;
@@ -500,6 +537,7 @@
 				55C88C7C1DA2B7E500FB4747 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		55C88C7D1DA2B7E500FB4747 /* Build configuration list for PBXNativeTarget "netControlUITests" */ = {
 			isa = XCConfigurationList;
@@ -508,6 +546,7 @@
 				55C88C7F1DA2B7E500FB4747 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
