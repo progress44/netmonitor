@@ -10,14 +10,17 @@
 
 @interface NetStats : NSObject
 
-//@property NSMutableArray *apps;
-//@property NSMutableArray *processes;
-//@property NSMutableArray *sources;
-//@property NSMutableArray *ignore;
-//@property NSDictionary *mapping;
+@property NSMutableArray *apps;
+@property NSMutableArray *processes;
+@property NSMutableArray *sources;
+@property NSMutableArray *ignore;
+@property NSDictionary *mapping;
 
 @property NSTimer *starter;
 @property BOOL started;
+
+- (void) monitor;
+- (void) start;
 
 @end
 

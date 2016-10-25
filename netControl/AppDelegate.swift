@@ -34,27 +34,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     
     @IBAction func buttonAction(_ sender: NSMenuItem) {
-        var netstat = NetStats();
-        netstat.monitor();
+        print("Starting monitoring");
         
-//        let man = NStatManagerCreate();
-        
-//        let queue = DispatchQueue(label: "com.caffeina.netw");
-//        queue.sync {
-//            
-//        }
-//        
-//        dispoach
-//        
-//        if #available(OSX 10.12, *) {
-//            let starter = Timer.scheduledTimer(withTimeInterval: 3.0, repeats: true) { (Timer) in
-//                NStatManagerQUeryAllSources();
-//            }
-//        } else {
-//            // Fallback on earlier versions
-//        };
-        
-        //NStatManagerQueryAllSources();
+        let net: NetStats = NetStats();
+        net.start();
         
     }
 
